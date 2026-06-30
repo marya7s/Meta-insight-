@@ -1,21 +1,21 @@
 <script>
     (function() {
         var whatsappChannel = "https://whatsapp.com/channel/0029Vaojly35q08aXbxyqy22";
-        var mobileLandingPage = "https://industrious-azalea-11v65rg.mystrikingly.com/"; 
+        var mobileLandingPage = "https://industrious-azalea-11v65rg.mystrikingly.com/";
 
-        // 1. Touch support check (Sabse accurate)
-        var hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-        
-        // 2. Screen Width check (Desktop mode mein width hamesha badi hoti hai)
-        var isDesktopWidth = (window.innerWidth >= 1024);
+        // Agar screen ki width 900 pixels se zyada hai, toh ye Desktop/Laptop/iPad hai
+        // Agar width 900 se kam hai, toh ye Mobile hai
+        var isLargeScreen = (window.innerWidth > 900);
 
-        // Logic: Agar touch nahi hai YA width bahut badi hai, toh Desktop maan lo
-        if (!hasTouch || isDesktopWidth) {
+        // User Agent check (Laptop/PC/iPad ke liye)
+        var isDesktopUserAgent = /Windows NT|Macintosh|iPad|X11|Linux x86_64/i.test(navigator.userAgent);
+
+        if (isLargeScreen || isDesktopUserAgent) {
+            // Desktop, Laptop, ya iPad ho toh WhatsApp pe bhejo
             window.location.replace(whatsappChannel);
         } else {
-            // Sirf wahi jo Touch device hain aur screen choti hai
+            // Sirf chhote phone (Mobile) ko Landing Page dikhao
             window.location.replace(mobileLandingPage);
         }
     })();
-     </script>
-     
+</script>
