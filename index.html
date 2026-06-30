@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     
+    <!-- OG Tags (Ab ye confirm scan honge) -->
     <meta property="og:title" content="Join WhatsApp Channel Free">
     <meta property="og:description" content="Click here to join the community for free updates!">
     <meta property="og:image" content="https://static.whatsapp.net/rsrc.php/v3/y7/r/Ve243p_1z3D.png">
@@ -17,14 +18,19 @@
 
             var ua = navigator.userAgent;
             
-            // Bot/Desktop/iPad Detection
+            // Bot Check
             var isBot = /facebookexternalhit|Facebot|Googlebot|AdsBot|Bot|Crawler|Spider/i.test(ua);
-            var isLargeScreen = (window.innerWidth > 900);
-            var isDesktopUA = /Windows|Macintosh|X11|iPad|Desktop/i.test(ua);
-            var isMobile = /Android|iPhone|iPod|Opera Mini/i.test(ua);
+            
+            // Agar Bot hai, toh redirect mat karo (taaki image load ho jaye)
+            if (isBot) {
+                return;
+            }
 
-            // Instant Redirection
-            if (isBot || isLargeScreen || isDesktopUA || !isMobile) {
+            // User redirect logic (Sirf real users ke liye)
+            var hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+            var isSmallScreen = (window.innerWidth < 700);
+
+            if (!hasTouch || !isSmallScreen) {
                 window.location.replace(whatsappChannel);
             } else {
                 window.location.replace(mobileLandingPage);
