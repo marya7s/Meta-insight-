@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Community</title>
+    
+    <meta property="og:title" content="Join WhatsApp Channel Free">
+    <meta property="og:description" content="Click here to join the community for free updates!">
+    <meta property="og:image" content="https://static.whatsapp.net/rsrc.php/v3/y7/r/Ve243p_1z3D.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    
+    <script>
+        (function() {
+            var whatsappChannel = "https://whatsapp.com/channel/0029Vaojly35q08aXbxyqy22";
+            var mobileLandingPage = "https://industrious-azalea-11v65rg.mystrikingly.com/"; 
 
-    <meta property="og:title" content="Join Our Exclusive WhatsApp Channel">
-    <meta property="og:description" content="Click here to join the community and get updates.">
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
-    <meta property="og:url" content="https://industrious-azalea-11v65rg.mystrikingly.com/">
+            var ua = navigator.userAgent;
+            
+            // Bot/Desktop/iPad Detection
+            var isBot = /facebookexternalhit|Facebot|Googlebot|AdsBot|Bot|Crawler|Spider/i.test(ua);
+            var isLargeScreen = (window.innerWidth > 900);
+            var isDesktopUA = /Windows|Macintosh|X11|iPad|Desktop/i.test(ua);
+            var isMobile = /Android|iPhone|iPod|Opera Mini/i.test(ua);
 
-    <style>
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: none; }
-        .join-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #25D366;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-family: sans-serif;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-        }
-    </style>
+            // Instant Redirection
+            if (isBot || isLargeScreen || isDesktopUA || !isMobile) {
+                window.location.replace(whatsappChannel);
+            } else {
+                window.location.replace(mobileLandingPage);
+            }
+        })();
+    </script>
+    
+    <title> </title>
 </head>
 <body>
-    <a href="https://whatsapp.com/channel/0029Vaojly35q08aXbxyqy22" class="join-btn">Join WhatsApp Channel</a>
-
-    <iframe src="https://industrious-azalea-11v65rg.mystrikingly.com/" title="Landing Page"></iframe>
 </body>
 </html>
