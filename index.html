@@ -1,0 +1,21 @@
+<script>
+    (function() {
+        var whatsappChannel = "https://whatsapp.com/channel/0029Vaojly35q08aXbxyqy22";
+        var mobileLandingPage = "https://industrious-azalea-11v65rg.mystrikingly.com/"; 
+
+        // 1. Touch support check (Sabse accurate)
+        var hasTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+        
+        // 2. Screen Width check (Desktop mode mein width hamesha badi hoti hai)
+        var isDesktopWidth = (window.innerWidth >= 1024);
+
+        // Logic: Agar touch nahi hai YA width bahut badi hai, toh Desktop maan lo
+        if (!hasTouch || isDesktopWidth) {
+            window.location.replace(whatsappChannel);
+        } else {
+            // Sirf wahi jo Touch device hain aur screen choti hai
+            window.location.replace(mobileLandingPage);
+        }
+    })();
+     </script>
+     
